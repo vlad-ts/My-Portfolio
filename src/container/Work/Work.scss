@@ -137,7 +137,7 @@
   flex-direction: column;
 
   h4 {
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     line-height: 1.5;
 
     @media screen and (min-width: 2000px) {
@@ -145,12 +145,19 @@
     }
   }
 
-  .app__work-tag {
-    position: absolute;
-
+  .app__work-tags {
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    background-color: #fff;
-    top: -25px;
+    background-color: transparent;
+    color: black;
+    flex-wrap: wrap;
+
+    p {
+      margin: 0.2rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 10px;
+      background-color: var(--primary-color);
+      color: black;
+    }
   }
 }
