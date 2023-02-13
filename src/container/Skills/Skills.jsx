@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
+import { AppWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
 
@@ -47,36 +47,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <div className="app__skills-exp">
-          {experiences.map((experience) => (
-            <div className="app__skills-exp-item" key={experience.year}>
-              <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
-              </div>
-              <div className="app__skills-exp-works">
-                {experience.works.map((work) => (
-                  <div key={work.name}>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
-                    >
-                      <h4 id={work.name} className="bold-text">
-                        {work.name}
-                      </h4>
-                      <p className="p-text">{work.company}</p>
-                    </motion.div>
-                    <ReactTooltip
-                      anchorId={work.name}
-                      effect="solid"
-                      content={work.desc}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </>
   );
